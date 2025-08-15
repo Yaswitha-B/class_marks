@@ -65,7 +65,7 @@ try {
     $conn->commit();
     switch ($role) {
     case "admin":
-        header("Location: ../admin_dashboard.php");
+        header("Location: ../app/admin_dashboard.php");
         break;
     case "faculty":
         header("Location: ../faculty_dashboard.php");

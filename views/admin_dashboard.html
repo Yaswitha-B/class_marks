@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="../css/admin_dashboard.css">
+</head>
+<body>
+<header>
+    <h1>Admin Dashboard</h1>
+</header>
+<nav>
+    <ul>
+        <li><button onclick="showTab('sections')">Sections</button></li>
+        <li><button onclick="showTab('faculty')">Faculty</button></li>
+        <li><button onclick="showTab('students')">Students</button></li>
+        <li><button onclick="showTab('courses')">Courses</button></li>
+        <li><button onclick="showTab('assigned')">Assigned Courses</button></li>
+    </ul>
+</nav>
+<main>
+    <section id="sections" class="tab">
+        <h2>Sections</h2>
+        <button onclick="addSection()">Add Section</button>
+        <table id="sectionsTable">
+            <thead>
+                <tr><th>ID</th><th>Year</th><th>Dept</th><th>Faculty ID</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section id="faculty" class="tab">
+        <h2>Faculty</h2>
+        <table id="facultyTable">
+            <thead><tr><th>Faculty ID</th><th>Dept</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section id="students" class="tab">
+        <h2>Students</h2>
+        <table id="studentsTable">
+            <thead><tr><th>Student ID</th><th>Section ID</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section id="courses" class="tab">
+        <h2>Courses</h2>
+        <button onclick="addCourse()">Add Course</button>
+        <table id="coursesTable">
+            <thead><tr><th>ID</th><th>Name</th><th>Year</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <section id="assigned" class="tab">
+        <h2>Assigned Courses</h2>
+        <button onclick="addAssigned()">Assign Course</button>
+        <table id="assignedTable">
+            <thead><tr><th>Course ID</th><th>Section ID</th><th>Faculty ID</th></tr></thead>
+            <tbody></tbody>
+        </table>
+    </section>
+</main>
+<script src="../js/admin_dashboard.js"></script>
+</body>
+</html>
