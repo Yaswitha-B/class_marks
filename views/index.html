@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class Marks Management</title>
+    <link rel="stylesheet" href="/class_marks/css/index.css">
+</head>
+<body>
+<div class="container">
+    <h1>Class Marks Management System</h1>
+
+    <div class="role-select">
+        <label>Select Role:</label>
+        <select id="role" onchange="toggleForms()">
+            <option value="">-- Choose Role --</option>
+            <option value="admin">Admin</option>
+            <option value="faculty">Faculty</option>
+            <option value="student">Student</option>
+        </select>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('login')">Login</button>
+        <button class="tab-btn" onclick="showTab('register')">Register</button>
+    </div>
+
+    <!-- Login -->
+    <div id="login" class="tab-content active">
+        <form action="/class_marks/app/process_login.php" method="POST">
+            <input type="hidden" name="role" id="login_role">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Register -->
+    <div id="register" class="tab-content">
+        <form action="/class_marks/app/process_register.php" method="POST">
+            <input type="hidden" name="role" id="register_role">
+            <input type="text" name="user_id" placeholder="User ID" required>
+            <input type="text" name="username" placeholder="Full Name" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <div id="extraFields"></div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+<script src="/class_marks/js/main.js"></script>
+</body>
+</html>
