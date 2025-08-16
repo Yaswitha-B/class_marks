@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link rel="stylesheet" href="../css/admin_dashboard.css">
+</head>
+<body>
+    <header>
+        <h1>Faculty Dashboard</h1>
+    </header>
+    <main>
+        <section class="section-selector">
+            <h2>Select Section</h2>
+            <select id="sectionSelect">
+                <option value="">Choose a section...</option>
+            </select>
+        </section>
+
+        <section class="marks-management">
+            <h2>Student Marks</h2>
+            <button onclick="addNewMarks()">Add New Marks</button>
+            <table id="marksTable">
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Course</th>
+                        <th>Midterm 1</th>
+                        <th>Assignment 1</th>
+                        <th>Midterm 2</th>
+                        <th>Assignment 2</th>
+                        <th>Semester</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Add/Edit Marks Modal -->
+    <div id="marksModal" class="modal">
+        <div class="modal-content">
+            <h3>Add/Edit Marks</h3>
+            <form id="marksForm">
+                <input type="hidden" id="studentId">
+                <input type="hidden" id="courseId">
+                <div class="form-group">
+                    <label for="mid1">Midterm 1:</label>
+                    <input type="number" id="mid1" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="asgn1">Assignment 1:</label>
+                    <input type="number" id="asgn1" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="mid2">Midterm 2:</label>
+                    <input type="number" id="mid2" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="asgn2">Assignment 2:</label>
+                    <input type="number" id="asgn2" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label for="sem">Semester:</label>
+                    <input type="number" id="sem" min="0" max="100">
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Save</button>
+                    <button type="button" onclick="closeModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/faculty_dashboard.js"></script>
+</body>
+</html>

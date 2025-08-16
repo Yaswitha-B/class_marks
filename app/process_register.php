@@ -68,7 +68,7 @@ try {
         header("Location: ../app/admin_dashboard.php");
         break;
     case "faculty":
-        header("Location: ../faculty_dashboard.php");
+        header("Location: ../app/faculty_dashboard.php");
         break;
     case "student":
         header("Location: ../student_dashboard.php");
